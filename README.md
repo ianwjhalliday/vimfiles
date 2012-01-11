@@ -6,9 +6,9 @@ back into vim inspired myself to get back into vim.
 Also thanks to [PeepCode][] for their vim screencasts
 which also got me excited to get back into vim.
 
-    [Mislav]:       http://mislav.uniqpath.com/
-    [blog post]:    http://mislav.uniqpath.com/2011/12/vim-revisited/
-    [PeepCode]:     http://peepcode.com/
+  [Mislav]:     http://mislav.uniqpath.com/
+  [blog post]:  http://mislav.uniqpath.com/2011/12/vim-revisited/
+  [PeepCode]:   http://peepcode.com/
 
 So far my configuration is still newbish. I've got a
 good starting vimrc (gvimrc) and I'm happily sharing
