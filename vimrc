@@ -4,6 +4,10 @@
 "" ianwjhalliday
 ""
 
+""" Initialize pathogen
+call pathogen#infect()
+
+
 """ Configuration
 
 "" General
