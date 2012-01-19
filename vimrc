@@ -64,8 +64,8 @@ let mapleader=","
 noremap <Bslash> ,
 
 "" Quickly open vimrc and gvimrc with ,ev and ,eg
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC
-nnoremap <leader>eg <C-w><C-v><C-l>:e $MYGVIMRC
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>eg :e $MYGVIMRC<cr>
 
 "" <esc> is awkward to use to get out of insert mode so
 "" let's use kj instead.  How often does kj get typed?
@@ -75,9 +75,17 @@ inoremap kj <esc>
 nnoremap <cr> :nohlsearch<cr>
 
 " Tab is easier to press than %
-nnoremap <tab> %
 " (Ctrl+I does same as tab used to)
+nnoremap <tab> %
 vnoremap <tab> %
+
+" Ctrl+6 is tricky to hit so map ,, to it for easy
+" last buffer switching
+nnoremap <leader><leader> <C-^>
+
+" %% in command mode is expanded to directory of
+" current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 
 "" Window management mappings
@@ -90,6 +98,17 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+
+"" Command-T mappings
+
+map <leader>f :CommandT<cr>
+map <leader>F :CommandT %%<cr>
+
+
+"" Ack mappings
+
+map <leader>a :Ack 
 
 
 "" Markdown specific mappings (should be triggered only for .md files?)
