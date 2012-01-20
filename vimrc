@@ -53,6 +53,9 @@ set listchars+=trail:.              " trailing whitespace as "."
 " set listchars+=extends:>            " ">" shown in last column when line extends past screen (nowrap)
 " set listchars+=precedes:<           " "<" shown in first column when line extends past screen (nowrap)
 
+"" BufKill plugin settings
+let g:BufKillOverrideCtrlCaret = 1  " Remember column as well as line for C-^
+
 
 """ Key bindings
 
@@ -80,8 +83,9 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Ctrl+6 is tricky to hit so map ,, to it for easy
-" last buffer switching
-nnoremap <leader><leader> <C-^>
+" last buffer switching.  Use recursive mapping to
+" take advantage of C-^ remapping in BufKill.vim.
+nmap <leader><leader> <C-^>
 
 " %% in command mode is expanded to directory of
 " current file - http://vimcasts.org/e/14
