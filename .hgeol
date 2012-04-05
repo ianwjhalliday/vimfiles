@@ -1,0 +1,4 @@
+[patterns]
+**rc = native
+**.md = native
+.hgeol = native

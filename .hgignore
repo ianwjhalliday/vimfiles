@@ -1,0 +1,7 @@
+syntax: glob
+
+*~
+*.swp
+.netrwhist
+bundle/command-t/**
+.DS_Store
