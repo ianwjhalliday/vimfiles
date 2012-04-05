@@ -22,11 +22,11 @@ set hidden                          " Allow backgrounding buffers w/o writing th
 
 "" Backup and Swap files
 set backup                          " Do I really want this?
-set backupdir=$TMPDIR,.             " Prefer temp dir for back up files over same dir as file
+set backupdir=$TMPDIR,$TEMP,.       " Prefer temp dir for back up files over same dir as file
 " Keep swap file directory to default but add $TMPDIR so that on windows there
 " is a real working location for new buffer swap files (because C:\tmp doesn't
 " exist generally).
-set dir+=$TMPDIR
+set dir+=$TMPDIR,$TEMP
 
 "" Editor Visuals
 set guicursor=n:blinkon0            " turn cursor blinking off in normal mode
