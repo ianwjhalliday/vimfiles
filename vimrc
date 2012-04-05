@@ -92,8 +92,9 @@ nnoremap <cr> :nohlsearch<cr>
 
 " Tab is easier to press than %
 " (Ctrl+I does same as tab used to)
-nnoremap <tab> %
-vnoremap <tab> %
+" Use recursive mappings to take advantage of matchit.vim
+nmap <tab> %
+vmap <tab> %
 
 " Ctrl+6 is tricky to hit so map ,, to it for easy
 " last buffer switching
