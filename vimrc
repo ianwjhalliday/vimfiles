@@ -18,10 +18,15 @@ set background=dark
 colorscheme solarized
 set encoding=utf-8                  " note utf-8 is forced in MacVim
 filetype plugin indent on           " load file type plugins + identation
-set noautoindent                    " Do I really want this?
-set smartindent                     " Do I really want this?
-set backup                          " Do I really want this?
 set hidden                          " Allow backgrounding buffers w/o writing them and remember marks/undo for them
+
+"" Backup and Swap files
+set backup                          " Do I really want this?
+set backupdir=$TMPDIR,.             " Prefer temp dir for back up files over same dir as file
+" Keep swap file directory to default but add $TMPDIR so that on windows there
+" is a real working location for new buffer swap files (because C:\tmp doesn't
+" exist generally).
+set dir+=$TMPDIR
 
 "" Editor Visuals
 set guicursor=n:blinkon0            " turn cursor blinking off in normal mode
@@ -31,8 +36,10 @@ set showmatch                       " flash matching brackets during typing
 set showcmd                         " display incomplete commands
 set laststatus=2                    " always show status line, even if only one window is open
 
-"" Whitespace
+"" Formatting
 set nowrap                          " don't wrap lines
+set noautoindent                    " Do I really want this?
+set smartindent                     " Do I really want this?
 set tabstop=4 shiftwidth=4          " a tab is four spaces
 set expandtab                       " use spaces, not tabs
 " I used to turn off backspace=start but it turns out this is useful to have
@@ -77,9 +84,9 @@ let mapleader=","
 noremap <Bslash> ,
 
 "" Quickly open vimrc and gvimrc with ,ev and ,eg
-"" Quickly source vimrc and gvimrc with ,sv and ,sg
-nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>eg :edit $MYGVIMRC<cr>
+"" and quickly source them with ,sv and ,sg
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
 
@@ -104,6 +111,15 @@ nnoremap <leader><leader> <C-^>
 " current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+" Use - and _ to move current [n] lines up or down one
+nnoremap - ddp
+nnoremap _ ddkP
+
+" Use H and L for home and end -- easier to type
+nnoremap H ^
+vnoremap H ^
+nnoremap L $
+vnoremap L $
 
 "" Window management mappings
 
