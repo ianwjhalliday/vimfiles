@@ -1,8 +1,9 @@
-"" .vimrc
-""
-"" Ian Halliday
-"" ianwjhalliday
-""
+"""" .vimrc
+""""
+"""" Ian Halliday
+"""" ianwjhalliday (gmail)
+""""
+"""" Style guideline:  Use full names of commands for clarity to readership
 
 """ Initialize pathogen
 call pathogen#infect()
@@ -13,7 +14,8 @@ call pathogen#infect()
 "" General
 set nocompatible                    " no legacy vi compatibility
 syntax enable
-colorscheme desert
+set background=dark
+colorscheme solarized
 set encoding=utf-8                  " note utf-8 is forced in MacVim
 filetype plugin indent on           " load file type plugins + identation
 set noautoindent                    " Do I really want this?
@@ -53,11 +55,19 @@ set listchars+=trail:.              " trailing whitespace as "."
 " set listchars+=extends:>            " ">" shown in last column when line extends past screen (nowrap)
 " set listchars+=precedes:<           " "<" shown in first column when line extends past screen (nowrap)
 
-"" BufKill plugin settings
-let g:BufKillOverrideCtrlCaret = 1  " Remember column as well as line for C-^
+""" File type auto configurations
+
+"" These types are xml
+autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets set filetype=xml
+
+" Quicky exit help by pressing q instead of :q<CR>
+autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
 
 
 """ Key bindings
+
+"" Solarized command to alternate between light and dark, use F5
+call togglebg#map("<F5>")
 
 "" Leader remapping (swap , and \)
 
@@ -67,8 +77,11 @@ let mapleader=","
 noremap <Bslash> ,
 
 "" Quickly open vimrc and gvimrc with ,ev and ,eg
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>eg :e $MYGVIMRC<cr>
+"" Quickly source vimrc and gvimrc with ,sv and ,sg
+nnoremap <leader>ev :edit $MYVIMRC<cr>
+nnoremap <leader>eg :edit $MYGVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sg :source $MYGVIMRC<cr>
 
 "" <esc> is awkward to use to get out of insert mode so
 "" let's use kj instead.  How often does kj get typed?
@@ -83,9 +96,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Ctrl+6 is tricky to hit so map ,, to it for easy
-" last buffer switching.  Use recursive mapping to
-" take advantage of C-^ remapping in BufKill.vim.
-nmap <leader><leader> <C-^>
+" last buffer switching
+nnoremap <leader><leader> <C-^>
 
 " %% in command mode is expanded to directory of
 " current file - http://vimcasts.org/e/14
