@@ -70,6 +70,15 @@ autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets set filetype
 " Quicky exit help by pressing q instead of :q<CR>
 autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
 
+"" Vimwiki
+" I prefer two spaces in tabs for vimwiki lists, folding requires this to work
+" correctly.
+autocmd BufNewFile,BufRead *.wiki set tabstop=2 shiftwidth=2
+
+""" Variable options
+
+let g:vimwiki_folding = 1
+let g:vimwiki_fold_lists = 1
 
 """ Key bindings
 
@@ -87,6 +96,8 @@ noremap <Bslash> ,
 "" and quickly source them with ,sv and ,sg
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
+nnoremap <leader>ehv :split $MYVIMRC<cr>
+nnoremap <leader>ehg :split $MYGVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
 
@@ -123,8 +134,13 @@ vnoremap L $
 
 "" Window management mappings
 
-" Open new vertical split and switch to it with ,w
-nnoremap <leader>w <C-w>v<C-w>l
+" Open new vertical split and switch to it with ,v
+" Open new horizontal split and switch to it with ,h
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
+
+" Close window quickly with ,q
+nnoremap <leader>q :q<cr>
 
 " Navigate windows using C-hjkl instead of C-w C-hjkl
 nnoremap <C-h> <C-w>h
