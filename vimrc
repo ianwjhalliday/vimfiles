@@ -90,6 +90,11 @@ autocmd BufNewFile,BufRead *.wiki setl tabstop=2 shiftwidth=2
 let g:vimwiki_folding = 1
 let g:vimwiki_fold_lists = 1
 
+let dropboxwiki = {}
+let dropboxwiki.path = '~/Dropbox/vimwiki'
+
+let g:vimwiki_list = [dropboxwiki]
+
 """ Key bindings
 
 "" Solarized command to alternate between light and dark, use F5
