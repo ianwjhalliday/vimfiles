@@ -67,6 +67,13 @@ set foldlevel=4                     " on opening files only close folds that are
 
 """ File type auto configurations
 
+"" Workaround to backupcopy=auto not working with symlinks bug on windows
+if has("win32")
+    autocmd BufWritePre ~/* set backupcopy=yes
+    autocmd BufWritePost ~/* set backupcopy&
+    autocmd BufWritePost ~/* silent !start /b attrib -r %
+endif
+
 "" These types are xml
 autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets setl filetype=xml
 
