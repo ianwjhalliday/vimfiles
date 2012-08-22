@@ -62,10 +62,13 @@ set listchars+=trail:.              " trailing whitespace as "."
 " set listchars+=extends:>            " ">" shown in last column when line extends past screen (nowrap)
 " set listchars+=precedes:<           " "<" shown in first column when line extends past screen (nowrap)
 
+"" Folding
+set foldlevel=4                     " on opening files only close folds that are nested four levels deep or more
+
 """ File type auto configurations
 
 "" These types are xml
-autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets set filetype=xml
+autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets setl filetype=xml
 
 " Quicky exit help by pressing q instead of :q<CR>
 autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
@@ -73,7 +76,7 @@ autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
 "" Vimwiki
 " I prefer two spaces in tabs for vimwiki lists, folding requires this to work
 " correctly.
-autocmd BufNewFile,BufRead *.wiki set tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.wiki setl tabstop=2 shiftwidth=2
 
 """ Variable options
 
