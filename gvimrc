@@ -30,3 +30,9 @@ endif
 if has("gui_macvim")
   set guifont=Inconsolata-dz:h14    " Inconsolata-dz 14 preferred on my MacBook Pro
 endif
+
+"""" Override and additional settings from external configuration files
+
+if filereadable(expand('~\SkyDrive\ @\ Microsoft\gvimrc'))
+    source $HOME/SkyDrive\ @\ Microsoft/gvimrc
+endif

@@ -180,3 +180,9 @@ nnoremap <leader>2 YpVr-
 nnoremap <leader>3 I### <esc>A ###<esc>
 nnoremap <leader>4 I#### <esc>A ####<esc>
 nnoremap <leader>5 I##### <esc>A #####<esc>
+
+"""" Override and additional settings from external configuration files
+
+if filereadable(expand('~\SkyDrive @ Microsoft\vimrc'))
+    source $HOME/SkyDrive\ @\ Microsoft/vimrc
+endif
