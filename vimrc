@@ -77,6 +77,8 @@ endif
 "" These types are xml
 autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets setl filetype=xml
 
+autocmd BufNewFile,BufRead */zsh/* set filetype=zsh
+
 " Quicky exit help by pressing q instead of :q<CR>
 autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
 
