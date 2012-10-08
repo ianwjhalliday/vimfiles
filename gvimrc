@@ -28,7 +28,7 @@ endif
 
 "" MacBook Pro specific settings
 if has("gui_macvim")
-  set guifont=Inconsolata-dz:h14    " Inconsolata-dz 14 preferred on my MacBook Pro
+  set guifont=Source\ Code\ Pro\ Light:h18    " Trying out Adobe's Source Code Pro on my MacBook Pro
 endif
 
 """" Override and additional settings from external configuration files
