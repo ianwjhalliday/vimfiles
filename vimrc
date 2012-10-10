@@ -67,25 +67,33 @@ set foldlevel=4                     " on opening files only close folds that are
 
 """ File type auto configurations
 
-"" Workaround to backupcopy=auto not working with symlinks bug on windows
-if has("win32")
-    autocmd BufWritePre ~/* set backupcopy=yes
-    autocmd BufWritePost ~/* set backupcopy&
-    autocmd BufWritePost ~/* silent !start /b attrib -r %
-endif
+" Use a group so we can clear all the autocmds without affecting plugins
+augroup vimrc
 
-"" These types are xml
-autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets setl filetype=xml
+    " Clear all autocmds in the group so they don't get added again on resourcing this vimrc file
+    autocmd!
 
-autocmd BufNewFile,BufRead */zsh/* set filetype=zsh
+    "" Workaround to backupcopy=auto not working with symlinks bug on windows
+    if has("win32")
+        autocmd BufWritePre ~/_vimrc,~/_gvimrc set backupcopy=yes
+        autocmd BufWritePost ~/_vimrc,~/_gvimrc set backupcopy&
+        autocmd BufWritePost ~/_vimrc,~/_gvimrc silent !attrib -r "%"
+    endif
 
-" Quicky exit help by pressing q instead of :q<CR>
-autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
+    "" These types are xml
+    autocmd BufNewFile,BufRead *.vsdconfigxml,*.*proj,*.props,*.targets setl filetype=xml
 
-"" Vimwiki
-" I prefer two spaces in tabs for vimwiki lists, folding requires this to work
-" correctly.
-autocmd BufNewFile,BufRead *.wiki setl tabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead */zsh/* set filetype=zsh
+
+    " Quicky exit help by pressing q instead of :q<CR>
+    autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
+
+    "" Vimwiki
+    " I prefer two spaces in tabs for vimwiki lists, folding requires this to work
+    " correctly.
+    autocmd BufNewFile,BufRead *.wiki setl tabstop=2 shiftwidth=2
+
+augroup END
 
 """ Variable options
 
