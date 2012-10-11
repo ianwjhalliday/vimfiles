@@ -93,6 +93,12 @@ augroup vimrc
     " correctly.
     autocmd BufNewFile,BufRead *.wiki setl tabstop=2 shiftwidth=2
 
+    "" CoffeeScript, Jade
+    " Fold by indentation, folding disabled by default (enable per file with zi).
+    " Tab width of two spaces.
+    autocmd BufNewFile,BufRead *.coffee,*.jade setl foldmethod=indent nofoldenable
+    autocmd BufNewFile,BufRead *.coffee,*.jade setl tabstop=2 shiftwidth=2
+
 augroup END
 
 """ Variable options
