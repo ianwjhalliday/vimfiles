@@ -88,6 +88,10 @@ augroup vimrc
     " Quicky exit help by pressing q instead of :q<CR>
     autocmd BufRead *.txt if &buftype=='help'|nmap <buffer> q <C-w>c|endif
 
+    "" XML
+    " I prefer two spaces in tabs for xml
+    autocmd FileType xml setl tabstop=2 shiftwidth=2
+
     "" Vimwiki
     " I prefer two spaces in tabs for vimwiki lists, folding requires this to work
     " correctly.
