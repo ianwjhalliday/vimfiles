@@ -141,7 +141,10 @@ nnoremap <leader>sg :source $MYGVIMRC<cr>
 inoremap kj <esc>
 
 " Map enter to clear highlight search in normal mode
+" Also map <leader><cr> to use in vimwiki files where enter
+" is used to create or follow links.
 nnoremap <cr> :nohlsearch<cr>
+nnoremap <leader><cr> :nohlsearch<cr>
 
 " Tab is easier to press than %
 " (Ctrl+I does same as tab used to)
@@ -162,10 +165,16 @@ nnoremap - ddp
 nnoremap _ ddkP
 
 " Use H and L for home and end -- easier to type
+" Swap with $ and ^ so that I still have keys to
+" get to the top and bottom of the screen.
 nnoremap H ^
 vnoremap H ^
+nnoremap ^ H
+vnoremap ^ H
 nnoremap L $
 vnoremap L $
+nnoremap $ L
+vnoremap $ L
 
 "" Window management mappings
 
