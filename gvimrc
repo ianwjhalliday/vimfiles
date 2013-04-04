@@ -18,7 +18,8 @@ set visualbell                      " don't beep
 
 "" Windows gVim specific settings
 if has("gui_win32")
-  set guifont=Inconsolata:h12       " Use Windows hinted version of Inconsolata (http://code.google.com/p/googlefontdirectory/source/browse/inconsolata)
+  "set guifont=Inconsolata:h12       " Use Windows hinted version of Inconsolata (http://code.google.com/p/googlefontdirectory/source/browse/inconsolata)
+  set guifont=Consolas:h9           " Sometimes I feel like good old 96 dpi pixel perfect Consolas 9pt
   set guioptions-=t                 " disable tear-off menu items
 
   " Only MacVim remembers window sizes, gVim does not
@@ -33,6 +34,11 @@ endif
 
 """" Override and additional settings from external configuration files
 
+" Stupid SkyDrive Pro has changed its naming scheme, so check for both
+" conventions.  @ Microsoft is the older convention.
+if filereadable(expand('~\SkyDrive\ Pro\gvimrc'))
+    source $HOME/SkyDrive\ Pro/gvimrc
+endif
 if filereadable(expand('~\SkyDrive\ @\ Microsoft\gvimrc'))
     source $HOME/SkyDrive\ @\ Microsoft/gvimrc
 endif
