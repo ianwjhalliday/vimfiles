@@ -220,3 +220,18 @@ nnoremap <leader>5 I##### <esc>A #####<esc>
 if filereadable(expand('~\SkyDrive @ Microsoft\vimrc'))
     source $HOME/SkyDrive\ @\ Microsoft/vimrc
 endif
+
+"""" Functions and their bindings
+
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
