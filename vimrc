@@ -217,6 +217,11 @@ nnoremap <leader>5 I##### <esc>A #####<esc>
 
 """" Override and additional settings from external configuration files
 
+" Stupid SkyDrive Pro has changed its naming scheme, so check for both
+" conventions.  @ Microsoft is the older convention.
+if filereadable(expand('~\SkyDrive\ Pro\vimrc'))
+    source $HOME/SkyDrive\ Pro/vimrc
+endif
 if filereadable(expand('~\SkyDrive @ Microsoft\vimrc'))
     source $HOME/SkyDrive\ @\ Microsoft/vimrc
 endif
