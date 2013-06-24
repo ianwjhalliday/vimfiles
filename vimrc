@@ -217,8 +217,9 @@ nnoremap <leader>5 I##### <esc>A #####<esc>
 
 """" Override and additional settings from external configuration files
 
-" Stupid SkyDrive Pro has changed its naming scheme, so check for both
-" conventions.  @ Microsoft is the older convention.
+" SkyDrive Pro didn't use the @ Microsoft convention on one of my previous
+" work laptops so handle both the default "SkyDrive Pro" and the proper
+" "SkyDrive @ Microsoft" directory names.
 if filereadable(expand('~\SkyDrive\ Pro\vimrc'))
     source $HOME/SkyDrive\ Pro/vimrc
 endif
