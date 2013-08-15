@@ -29,7 +29,9 @@ endif
 
 "" MacBook Pro specific settings
 if has("gui_macvim")
-  set guifont=Source\ Code\ Pro\ Light:h18    " Trying out Adobe's Source Code Pro on my MacBook Pro
+  "set guifont=Source\ Code\ Pro\ Light:h18    " Trying out Adobe's Source Code Pro on my MacBook Pro
+  set guifont=Source\ Code\ Pro\ Light:h13    " 18 is big, perhaps too big.  13 is nice, comparable to Inconsolata at 12 pt
+  "set guifont=Inconsolata-dz:h12
 endif
 
 """" Override and additional settings from external configuration files
