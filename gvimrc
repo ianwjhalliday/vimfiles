@@ -19,7 +19,8 @@ set visualbell                      " don't beep
 "" Windows gVim specific settings
 if has("gui_win32")
   "set guifont=Inconsolata:h12       " Use Windows hinted version of Inconsolata (http://code.google.com/p/googlefontdirectory/source/browse/inconsolata)
-  set guifont=Consolas:h9           " Sometimes I feel like good old 96 dpi pixel perfect Consolas 9pt
+  "set guifont=Consolas:h9           " Sometimes I feel like good old 96 dpi pixel perfect Consolas 9pt
+  set guifont=Consolas:h15          " And sometimes I feel like crazy large crisp Consolas 15pt -- eyes are getting bad
   set guioptions-=t                 " disable tear-off menu items
 
   " Only MacVim remembers window sizes, gVim does not
