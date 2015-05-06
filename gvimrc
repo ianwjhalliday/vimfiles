@@ -37,11 +37,6 @@ endif
 
 """" Override and additional settings from external configuration files
 
-" Stupid SkyDrive Pro has changed its naming scheme, so check for both
-" conventions.  @ Microsoft is the older convention.
-if filereadable(expand('~\SkyDrive\ Pro\gvimrc'))
-    source $HOME/SkyDrive\ Pro/gvimrc
-endif
-if filereadable(expand('~\SkyDrive\ @\ Microsoft\gvimrc'))
-    source $HOME/SkyDrive\ @\ Microsoft/gvimrc
+if filereadable(expand('~\OneDrive - Microsoft\gvimrc'))
+    source $HOME/OneDrive\ -\ Microsoft/gvimrc
 endif
