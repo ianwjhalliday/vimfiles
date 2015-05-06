@@ -14,7 +14,7 @@ call pathogen#infect()
 "" General
 set nocompatible                    " no legacy vi compatibility
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 set encoding=utf-8                  " note utf-8 is forced in MacVim
 filetype plugin indent on           " load file type plugins + identation
@@ -192,6 +192,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Resize windows using control and the arrow keys
+nnoremap <C-Left> <C-W>-<C-W>-
+nnoremap <C-Right> <C-W>+<C-W>+
+nnoremap <C-Up> <C-W>><C-W>>
+nnoremap <C-Down> <C-W><<C-W><
 
 "" Command-T mappings
 
@@ -217,14 +222,8 @@ nnoremap <leader>5 I##### <esc>A #####<esc>
 
 """" Override and additional settings from external configuration files
 
-" SkyDrive Pro didn't use the @ Microsoft convention on one of my previous
-" work laptops so handle both the default "SkyDrive Pro" and the proper
-" "SkyDrive @ Microsoft" directory names.
-if filereadable(expand('~\SkyDrive\ Pro\vimrc'))
-    source $HOME/SkyDrive\ Pro/vimrc
-endif
-if filereadable(expand('~\SkyDrive @ Microsoft\vimrc'))
-    source $HOME/SkyDrive\ @\ Microsoft/vimrc
+if filereadable(expand('~\OneDrive - Microsoft\vimrc'))
+    source $HOME/OneDrive\ -\ Microsoft/vimrc
 endif
 
 """" Functions and their bindings
