@@ -14,8 +14,9 @@ call pathogen#infect()
 "" General
 set nocompatible                    " no legacy vi compatibility
 syntax enable
-set background=light
-colorscheme solarized
+"set background=light
+"colorscheme solarized
+colorscheme zenburn
 set encoding=utf-8                  " note utf-8 is forced in MacVim
 filetype plugin indent on           " load file type plugins + identation
 set hidden                          " Allow backgrounding buffers w/o writing them and remember marks/undo for them
