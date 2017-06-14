@@ -245,3 +245,13 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+"" fullscreen toggle calling out to gvimfullscreen.dll
+""   state is persisted via vim string passed to and returned from
+""   the library call, since vim unloads the library after the call
+""   is made
+let g:gvimfullscreen_state = ""
+function! <SID>ToggleFullScreen()
+    let g:gvimfullscreen_state = libcall("gvimfullscreen.dll", "ToggleFullScreen", g:gvimfullscreen_state)
+endfunction
+nnoremap <F11> :call <SID>ToggleFullScreen()<CR>
