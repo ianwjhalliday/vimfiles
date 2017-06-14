@@ -21,7 +21,7 @@ set hidden                          " Allow backgrounding buffers w/o writing th
 "" color scheme
 "set background=light
 "colorscheme solarized
-let g:zenburn_high_Contrast = 1
+"let g:zenburn_high_Contrast = 1
 let g:zenburn_disable_Label_underline = 1
 colorscheme zenburn
 

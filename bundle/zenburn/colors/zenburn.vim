@@ -369,8 +369,8 @@ else
         endif
     else
         " low contrast
-        hi Visual        guibg=#2f2f2f  ctermbg=235
-        hi VisualNOS     guibg=#2f2f2f  ctermbg=235
+        hi Visual        guibg=#272727  ctermbg=235
+        hi VisualNOS     guibg=#272727  ctermbg=235
     endif
 endif
 
