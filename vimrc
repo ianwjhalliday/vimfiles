@@ -18,6 +18,9 @@ set encoding=utf-8                  " note utf-8 is forced in MacVim
 filetype plugin indent on           " load file type plugins + identation
 set hidden                          " Allow backgrounding buffers w/o writing them and remember marks/undo for them
 
+"" vim-jsx plugin
+let g:jsx_ext_required = 0
+
 "" color scheme
 "set background=light
 "colorscheme solarized
@@ -96,6 +99,9 @@ augroup vimrc
     "" XML
     " I prefer two spaces in tabs for xml
     autocmd FileType xml setl tabstop=2 shiftwidth=2
+
+    " JavaScript and TypeScript tend to use two space tabs
+    autocmd FileType javascript,javascript.jsx,typescript,typescript.jsx setl tabstop=2 shiftwidth=2
 
     "" Vimwiki
     " I prefer two spaces in tabs for vimwiki lists, folding requires this to work
